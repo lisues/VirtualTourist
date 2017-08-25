@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GeoPhoto" representedClassName="GeoPhoto" syncable="YES">
+        <attribute name="photo" attributeType="Binary" allowsExternalBinaryDataStorage="YES" indexed="YES" syncable="YES"/>
+        <relationship name="photos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoPin" inverseName="album" inverseEntity="GeoPin" syncable="YES"/>
+    </entity>
+    <entity name="GeoPin" representedClassName="GeoPin" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="locality" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="album" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GeoPhoto" inverseName="photos" inverseEntity="GeoPhoto" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GeoPhoto" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="GeoPin" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>
